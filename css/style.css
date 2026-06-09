@@ -854,3 +854,27 @@ text-align:center;
 margin-bottom:15px;
 
 }
+.order-notification{
+    position:fixed;
+    top:50%;
+    left:20px;
+    transform:translateY(-50%);
+    background:#fff;
+    border-radius:12px;
+    padding:14px 18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
+    z-index:9999;
+    max-width:320px;
+
+    opacity:0;
+    transition:all .4s ease;
+}
+
+.order-notification.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.order-notification strong{
+    color:#2e7d32;
+}
