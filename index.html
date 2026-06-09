@@ -268,17 +268,57 @@
           <div class="form-group">
             <label for="form-phone">Số Điện Thoại *</label>
             <input type="tel" id="form-phone" placeholder="Nhập số điện thoại" required>
-          </div>
-          <div class="form-group">
-            <label for="form-email">Email</label>
-            <input type="email" id="form-email" placeholder="Nhập email (tùy chọn)">
-          </div>
+            <div class="form-group">
+    <label for="form-address">Địa Chỉ Nhận Hàng *</label>
+    <input
+        type="text"
+        id="form-address"
+        placeholder="Nhập địa chỉ nhận hàng"
+        required> </div>
+        <div class="form-group">
+    <label for="combo-select">Chọn Combo *</label>
+
+    <select id="combo-select" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;" required>
+
+        <option value="1">
+            1 Hộp 250g - 199.000đ
+        </option>
+
+        <option value="3">
+            COMBO 3 HỘP + TẶNG 1 HỘP - 567.000đ
+        </option>
+
+        <option value="5" selected>
+            COMBO 5 HỘP + TẶNG 2 HỘP - 945.000đ
+        </option>
+
+    </select>
+</div>
+          
           <div style="padding-top: 1rem;">
-            <p style="font-size: 0.875rem; color: #8B7355; margin-bottom: 1rem;">
-              Combo được chọn: <span id="combo-info-text" style="font-weight: 700; color: #2D5016;">Mua 5 Tặng 2 (945.000đ)</span>
-            </p>
+            <div class="shipping-note">
+
+🚚 Miễn phí vận chuyển cho đơn hàng từ 250.000đ
+
+</div>
+
+<p style="font-size:0.95rem;margin-bottom:1rem;">
+
+🎁 Combo 3 Hộp + Tặng 1 Hộp:
+<strong>567.000đ</strong>
+
+<br><br>
+
+🎁 Combo 5 Hộp + Tặng 2 Hộp:
+<strong>945.000đ</strong>
+
+<br><small>
+Giá gốc: 1.323.000đ
+</small>
+
+</p>
             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem 1.5rem; font-size: 1.125rem;">
-              🛒 Xác Nhận Đặt Hàng
+              🚚 ĐẶT HÀNG NGAY
             </button>
           </div>
           <input type="hidden" id="selected-combo" value="5">
@@ -544,7 +584,7 @@ Có. Khách được kiểm tra trước khi thanh toán.
         <div class="footer-section">
           <h4>Liên Hệ</h4>
           <p>Email: info@sadumate.com</p>
-          <p>Hotline: 1900 xxxx</p>
+          <p>Hotline: 19008952</p>
         </div>
         <div class="footer-section">
           <h4>Theo Dõi</h4>

@@ -801,3 +801,20 @@ font-weight:bold;
 cursor:pointer;
 
 }
+.shipping-note{
+
+background:#E8F7EC;
+border:1px solid #BFE3C8;
+color:#0A7B34;
+
+padding:12px;
+
+border-radius:10px;
+
+font-weight:700;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
