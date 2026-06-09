@@ -198,3 +198,40 @@ window.addEventListener('load', function() {
   initLazyLoad();
   initMobileMenu();
 });
+function countdown() {
+
+let end = new Date();
+
+end.setHours(23,59,59);
+
+setInterval(()=>{
+
+let now = new Date();
+
+let distance = end - now;
+
+let h = Math.floor(distance/(1000*60*60));
+
+let m = Math.floor(
+(distance%(1000*60*60))/(1000*60)
+);
+
+let s = Math.floor(
+(distance%(1000*60))/1000
+);
+
+let timer =
+document.getElementById("countdown");
+
+if(timer){
+
+timer.innerHTML =
+h + "h " + m + "m " + s + "s";
+
+}
+
+},1000);
+
+}
+
+countdown();
