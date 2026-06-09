@@ -2,7 +2,6 @@
 // Vanilla JS - No frameworks
 
 document.addEventListener('DOMContentLoaded', function() {
-  initComboSelection();
   initFormSubmission();
   initScrollAnimations();
   initSmoothScroll();
@@ -38,12 +37,31 @@ function initComboSelection() {
 }
 
 function updateComboInfo(comboValue) {
-  const infoText = document.getElementById('combo-info-text');
-  if (comboValue === '3') {
-    infoText.textContent = 'Mua 3 Tặng 1 (567.000đ)';
-  } else if (comboValue === '5') {
-    infoText.textContent = 'Mua 5 Tặng 2 (945.000đ)';
+
+  const infoText =
+  document.getElementById('combo-info-text');
+
+  if (comboValue === '1') {
+
+    infoText.textContent =
+    '1 Hộp 250g - Tổng 229.000đ';
+
   }
+
+  else if (comboValue === '3') {
+
+    infoText.textContent =
+    'Combo 3 Hộp + Tặng 1 - 567.000đ';
+
+  }
+
+  else {
+
+    infoText.textContent =
+    'Combo 5 Hộp + Tặng 2 - 945.000đ';
+
+  }
+
 }
 
 // ============ Form Submission ============
@@ -57,27 +75,106 @@ function initFormSubmission() {
       const name = document.getElementById('form-name').value.trim();
       const phone = document.getElementById('form-phone').value.trim();
       const address = document.getElementById('form-address').value.trim();
-      const comboValue = document.getElementById('selected-combo').value;
+      const comboValue = document.getElementById('combo-select').value;
       
       // Validation
-      if (!name || !phone) {
-        alert('Vui lòng điền đầy đủ Họ tên và Số điện thoại!');
+      if (!name || !phone || !address) {
+        alert('Vui lòng nhập đầy đủ Họ tên, Số điện thoại và Địa chỉ nhận hàng!');
         return;
       }
       
       // Get combo info
-      let comboText = '';
-      if (comboValue === '3') {
-        comboText = 'Mua 3 Tặng 1';
-      } else if (comboValue === '5') {
-        comboText = 'Mua 5 Tặng 2';
-      }
-      
+     let comboText = '';
+
+if (comboValue === '1') {
+
+  comboText = '1 Hộp 250g (199.000đ + 30.000đ ship)';
+
+}
+else if (comboValue === '3') {
+
+  comboText = 'Combo 3 Hộp + Tặng 1';
+
+}
+else {
+
+  comboText = 'Combo 5 Hộp + Tặng 2';
+
+}
       // Show success message
-      alert(`Cảm ơn bạn! Đơn hàng của bạn sẽ được xác nhận.\n\nThông tin:\nHọ tên: ${name}\nSố điện thoại: ${phone}\nCombo: ${comboText}`);
-      
-      // Reset form
-      form.reset();
+      let total = '';
+
+if(comboValue === '1'){
+  total = '229.000đ';
+}
+
+else if(comboValue === '3'){
+  total = '567.000đ';
+}
+
+else{
+  total = '945.000đ';
+}
+
+fetch(
+'https://script.google.com/macros/s/AKfycbwCSeyTtwJ1mYYmRexIlBcC_tN9dXFWNlU4gRe68jOjy13hqkpG_J73aff7lmd8lAdT/exec',
+{
+  method:'POST',
+
+  headers:{
+    'Content-Type':'application/json'
+  },
+
+  body:JSON.stringify({
+
+    name:name,
+
+    phone:phone,
+
+    address:address,
+
+    product:comboText,
+
+    total:total
+
+  })
+
+})
+
+.then(response => response.text())
+
+.then(data => {
+
+  alert(
+`🎉 ĐẶT HÀNG THÀNH CÔNG
+
+Họ tên: ${name}
+
+SĐT: ${phone}
+
+Địa chỉ: ${address}
+
+Sản phẩm: ${comboText}
+
+Tổng thanh toán: ${total}
+
+Chúng tôi sẽ liên hệ xác nhận đơn hàng trong ít phút.`
+  );
+
+  form.reset();
+
+})
+
+.catch(error => {
+
+  alert(
+'Có lỗi gửi đơn hàng. Vui lòng thử lại.'
+  );
+
+  console.error(error);
+
+});
+    
       
       // Reset combo selection to default
       const defaultCombo = document.querySelector('[data-combo="5"]');
