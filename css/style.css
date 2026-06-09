@@ -466,8 +466,10 @@ section {
 }
 
 .combo-card.active {
-  border-color: var(--primary);
-  background-color: #F5F1E8;
+   border:3px solid #2D5016;
+  background:#FFFDF8;
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(45,80,22,0.20);
 }
 
 .combo-card:hover {
@@ -475,17 +477,26 @@ section {
 }
 
 .combo-badge {
-  position: absolute;
-  top: -1rem;
-  right: 1.5rem;
-  background-color: var(--secondary);
-  color: white;
-  padding: 0.25rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 700;
-}
+  position:absolute;
+  top:-14px;
+  right:20px;
 
+  background:#ff9800;
+  color:white;
+
+  padding:6px 14px;
+
+  border-radius:30px;
+
+  font-size:13px;
+  font-weight:700;
+
+  box-shadow:0 5px 15px rgba(255,152,0,.35);
+}
+.combo-card[data-combo="5"]{
+  background:#FFFBEA;
+  border:2px solid #E9C46A;
+}
 .combo-header {
   display: flex;
   align-items: flex-start;

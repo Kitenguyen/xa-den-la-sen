@@ -56,7 +56,7 @@ function initFormSubmission() {
       
       const name = document.getElementById('form-name').value.trim();
       const phone = document.getElementById('form-phone').value.trim();
-      const email = document.getElementById('form-email').value.trim();
+      const address = document.getElementById('form-address').value.trim();
       const comboValue = document.getElementById('selected-combo').value;
       
       // Validation
