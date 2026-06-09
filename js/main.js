@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initSmoothScroll();
 });
 
+
 // ============ Combo Selection ============
 function initComboSelection() {
   const comboCards = document.querySelectorAll('.combo-card');
@@ -95,7 +96,7 @@ else if (comboValue === '3') {
 
   comboText = 'Combo 3 Hộp + Tặng 1';
 
-  
+
 }
 else {
 
