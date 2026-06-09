@@ -103,7 +103,15 @@ else {
   comboText = 'Combo 5 Hộp + Tặng 2';
 
 }
-      // Show success message
+      // Show loading/pending state on submit button
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonHTML = submitButton ? submitButton.innerHTML : 'Đang gửi đơn...';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.classList.add('btn-loading');
+        submitButton.innerHTML = 'Đang gửi đơn...';
+      }
+
       let total = '';
 
 if(comboValue === '1'){
@@ -174,6 +182,13 @@ Chúng tôi sẽ liên hệ xác nhận đơn hàng trong ít phút.`
 
   console.error(error);
 
+})
+.finally(() => {
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.classList.remove('btn-loading');
+    submitButton.innerHTML = originalButtonHTML;
+  }
 });
     
       
