@@ -401,3 +401,70 @@ function initFakeOrders() {
 }
 
 initFakeOrders();
+function initFeedbackSlider(){
+
+  const slides =
+  document.querySelectorAll('.feedback-slide');
+
+  const prev =
+  document.querySelector('.feedback-prev');
+
+  const next =
+  document.querySelector('.feedback-next');
+
+  if(!slides.length) return;
+
+  let current = 0;
+
+  function showSlide(index){
+
+    slides.forEach(slide =>
+      slide.classList.remove('active')
+    );
+
+    slides[index].classList.add('active');
+  }
+
+  next.addEventListener('click',()=>{
+
+    current++;
+
+    if(current >= slides.length){
+      current = 0;
+    }
+
+    showSlide(current);
+
+  });
+
+  prev.addEventListener('click',()=>{
+
+    current--;
+
+    if(current < 0){
+      current = slides.length - 1;
+    }
+
+    showSlide(current);
+
+  });
+
+  setInterval(()=>{
+
+    current++;
+
+    if(current >= slides.length){
+      current = 0;
+    }
+
+    showSlide(current);
+
+  },3000);
+
+}
+
+window.addEventListener('load',function(){
+
+  initFeedbackSlider();
+
+});
