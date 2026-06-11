@@ -868,6 +868,33 @@ margin-bottom:15px;
     opacity:0;
     transition:all .4s ease;
 }
+@media(max-width:768px){
+
+  .order-notification{
+      width:220px;
+      max-width:220px;
+
+      left:10px;
+      bottom:100px;
+      top:auto;
+
+      padding:8px 10px;
+
+      font-size:12px;
+
+      border-radius:12px;
+
+      box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+      transform:none;
+  }
+
+  .order-notification.show{
+      opacity:1;
+      transform:none;
+  }
+
+}
 
 .order-notification.show{
     opacity:1;
