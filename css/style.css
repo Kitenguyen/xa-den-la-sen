@@ -937,11 +937,7 @@ margin-bottom:15px;
 .feedback-next{
   right:-20px;
 }
-.logo-icon img{
-  width:40px;
-  height:40px;
-  object-fit:contain;
-}
+
 .usage-guide{
   padding:60px 20px;
   background:#f9f7f3;
