@@ -104,21 +104,26 @@ header {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .logo-icon img{
-  width:40px;
-  height:40px;
-  object-fit:contain;
+  height:42px;
+    width:auto;
+    display:block;
+    flex-shrink:0;
 }
 
 .logo-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
+   display:flex;
+    align-items:center;
+    height:42px;
+    font-size:18px;
+    font-weight:700;
+    color:#2D5016;
+    line-height:1;
 }
 
 /* Buttons */
