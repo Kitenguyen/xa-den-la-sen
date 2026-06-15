@@ -89,18 +89,18 @@ function initFormSubmission() {
 
       if (comboValue === '1') {
 
-        comboText = '1 Hộp 250g (199.000đ + 30.000đ ship)';
+        comboText = '1 Hộp 250g (149.000đ + 30.000đ ship)';
 
       }
       else if (comboValue === '3') {
 
-        comboText = 'Combo 3 Hộp + Tặng 1';
+        comboText = 'Combo 3 Hộp + Tặng 1 Hộp + Tặng Ống hút trà Inox 304 + Xúc trà gỗ';
 
 
       }
       else {
 
-        comboText = 'Combo 5 Hộp + Tặng 2';
+        comboText = 'Combo 5 Hộp + Tặng 2 Hộp + Tặng Ống hút trà Inox 304 + Xúc trà gỗ';
 
       }
       // Show loading/pending state on submit button
@@ -115,15 +115,15 @@ function initFormSubmission() {
       let total = '';
 
       if (comboValue === '1') {
-        total = '229.000đ';
+        total = '179.000đ';
       }
 
       else if (comboValue === '3') {
-        total = '567.000đ';
+        total = '447.000đ';
       }
 
       else {
-        total = '945.000đ';
+        total = '745.000đ';
       }
 
       fetch(
@@ -366,9 +366,9 @@ function initFakeOrders() {
   ];
 
   const products = [
-    "1 Hộp 250g",
-    "Combo 3 Hộp + Tặng 1",
-    "Combo 5 Hộp + Tặng 2"
+     "1 Hộp 150g",
+  "Combo 3 Hộp + Tặng 1 + Quà tặng",
+  "Combo 5 Hộp + Tặng 2 + Quà tặng"
   ];
 
   const popup =
