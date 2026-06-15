@@ -1126,3 +1126,34 @@ margin-bottom:15px;
   }
 
 }
+.combo-gift{
+    margin-top:15px;
+    padding:12px;
+    background:#FFF8E6;
+    border:1px dashed #E9C46A;
+    border-radius:10px;
+}
+
+.combo-gift strong{
+    color:#C27B00;
+    display:block;
+    margin-bottom:8px;
+}
+
+.combo-gift ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.combo-gift li{
+    margin:5px 0;
+    color:#2D5016;
+    font-size:14px;
+}
+
+.combo-gift li::before{
+    content:"✓ ";
+    color:#0A7B34;
+    font-weight:bold;
+}
